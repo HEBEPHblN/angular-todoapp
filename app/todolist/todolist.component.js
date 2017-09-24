@@ -1,10 +1,7 @@
 angular.
-	module('todoApp').
+	module('todoList').
 	component('todolist', {
-		template:
-			'<ul>' +
-			'<li>list</li>' +
-			'</ul>',
+		templateUrl: 'todolist/todolist.template.html',
 		controller: function AppListController() {
 
 		}
