@@ -6,7 +6,16 @@ angular.
 			this.todolist = [];
 			this.donelist = [];
 
-			this.todoCount = this.todolist.length;
+			
 			this.doneCount = this.donelist.length;
+
+			this.newTaskAdd = function () {
+				this.todolist.push({
+					title: this.newTaskTitle,
+					done: false
+				});
+				this.todoCount = this.todolist.length;
+				this.newTaskTitle = '';
+			}
 		}
 	});
