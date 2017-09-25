@@ -1,7 +1,23 @@
-<ul class="list-group">
-  <li class="list-group-item">Cras justo odio</li>
-  <li class="list-group-item">Dapibus ac facilisis in</li>
-  <li class="list-group-item">Morbi leo risus</li>
-  <li class="list-group-item">Porta ac consectetur ac</li>
-  <li class="list-group-item">Vestibulum at eros</li>
-</ul>
+<div class="col-4 col-sm-4">
+    <h3>TODO list <span class="badge badge-secondary">{{$ctrl.todoCount}}</span>
+		<small class="text-muted">Click to mark as done</small>
+	</h3>
+	<ul class="list-group" ng-show="!$ctrl.listEmpty">
+	  <li class="list-group-item" ng-repeat="task in $ctrl.todolist">{{ task.title }}</li>
+	</ul>
+	<div class="alert alert-warning" role="alert" ng-show="!$ctrl.todolist.length">
+	  Task list is empty
+	</div>
+</div>
+<div class="col-4 col-sm-4">
+	<h3>DONE list <span class="badge badge-secondary">{{$ctrl.doneCount}}</span>
+		<small class="text-muted">Click to mark as undone</small>
+	</h3>
+	<ul class="list-group" ng-show="!$ctrl.undoneListEmpty">
+	  <li class="list-group-item" ng-repeat="task in $ctrl.undonelist">{{ task.title }}</li>
+	</ul>
+	<div class="alert alert-warning" role="alert" ng-show="!$ctrl.donelist.length"">
+	 	Task list is empty
+	</div>
+</div>
+<div class="col-4 col-sm-4"></div>
