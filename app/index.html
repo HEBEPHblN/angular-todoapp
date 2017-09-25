@@ -3,14 +3,35 @@
   <head>
     <meta charset="utf-8">
     <title>My TODO App</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+
 
     <script src="app.module.js"></script>
     <script src="todolist/todolist.module.js"></script>
     <script src="todolist/todolist.component.js"></script>
+
+    <style type="text/css">
+        body {
+            margin-top: 40px;
+        }
+    </style>
   </head>
   <body>
-    <todolist></todolist>
+    <div class="container">
+        <div class="row">
+            <div class="col-4 col-sm-4">
+                <h3>
+                TODO list
+                <small class="text-muted">Click to mark as done</small>
+                </h3>
+                <todolist></todolist>
+            </div>
+            <div class="col-4 col-sm-4"></div>
+            <div class="col-4 col-sm-4"></div>
+        </div>
+    </div>
   </body>
 </html>
