@@ -1,0 +1,9 @@
+<h3>DONE list <span class="badge badge-secondary">{{ $ctrl.countTasks(); }}</span>
+		<small class="text-muted">Click to mark as undone</small>
+	</h3>
+	<ul class="list-group" ng-show="$ctrl.countTasks()">
+	  <li class="list-group-item clearfix todoitem" ng-repeat="task in $ctrl.tasks | filter: {done:true}">{{ task.title }} <button ng-click="$ctrl.taskUndone(task.id)" type="button" class="btn btn-danger btn-sm pull-right">Undone</button></li>
+	</ul>
+	<div class="alert alert-warning" role="alert" ng-hide="$ctrl.countTasks()">
+	 	Task list is empty
+	</div>

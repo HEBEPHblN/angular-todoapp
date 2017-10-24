@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="todoApp">
+<html lang="en" >
   <head>
     <meta charset="utf-8">
     <title>My TODO App</title>
@@ -10,8 +10,16 @@
 
 
     <script src="app.module.js"></script>
-    <script src="todolist/todolist.module.js"></script>
-    <script src="todolist/todolist.component.js"></script>
+    <script src="core/tasks/tasks.module.js"></script>
+    <script src="tasklist/tasklist.module.js"></script>
+    <script src="addtask/addtask.module.js"></script>
+    <script src="donedtasks/donedtasks.module.js"></script>
+
+    <script src="core/tasks/tasks.service.js"></script>
+
+    <script src="tasklist/tasklist.component.js"></script>
+    <script src="addtask/addtask.component.js"></script>
+    <script src="donedtasks/donedtasks.component.js"></script>
 
     <style type="text/css">
         body {
@@ -22,10 +30,18 @@
         }
     </style>
   </head>
-  <body>
+  <body ng-app="todoApp">
     <div class="container">
         <div class="row">
-            <todolist></todolist>    
+            <div class="col-4 col-sm-4">
+                <add-task></add-task> 
+            </div>
+            <div class="col-4 col-sm-4">
+                <task-list></task-list>  
+            </div>   
+            <div class="col-4 col-sm-4">
+                <doned-tasks></doned-tasks>
+            </div>  
         </div>
     </div>
   </body>

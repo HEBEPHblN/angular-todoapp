@@ -1,3 +1,6 @@
 angular.module('todoApp', [
-	'todoList'
+	'addTask',
+	'taskList',
+	'donedTasks'
 ]);
+
