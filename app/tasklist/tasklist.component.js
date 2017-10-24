@@ -9,7 +9,9 @@ angular.
 			
 
 			this.taskDone = function(taskId) {
-				$filter('filter')(Tasks.tasks,{id: taskId})[0].done = true;
+
+				Tasks.getTasks({id: taskId})[0].done = true;
+				
 			}
 
 			this.countTasks = function() {

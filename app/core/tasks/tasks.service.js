@@ -1,5 +1,5 @@
 angular.
-	module('core.tasks').factory('Tasks', function() {
+	module('core.tasks').factory('Tasks', ['$filter', function($filter) {
 	return {
 		tasksCount: 0,
 		tasks: [],
@@ -10,6 +10,10 @@ angular.
 					done: false,
 					id: that.tasksCount++
 				});
+		},
+		getTasks: function(queryObject) {
+			var that = this;
+			return $filter('filter')(this.tasks, queryObject);
 		}
 	}
-});
+}]);
