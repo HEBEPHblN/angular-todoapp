@@ -6,11 +6,7 @@ angular.
 
 			this.newTaskAdd = function() {
 
-				Tasks.tasks.push({
-					title: this.newTaskTitle,
-					done: false,
-					id: Tasks.tasksCount++
-				});
+				Tasks.addTask(this.newTaskTitle);
 				this.newTaskTitle = '';
 			}
 

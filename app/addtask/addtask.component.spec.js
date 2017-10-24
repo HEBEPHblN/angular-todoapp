@@ -14,13 +14,11 @@ describe('addTask', function() {
       ctrl = $componentController('addTask');
     }));
 
-    it('newTaskAdd() - should add task object to Tasks services array and clear input field', function() {
+    it('newTaskAdd() - should use Task service and clear input field after that', function() {
       
 
       ctrl.newTaskTitle = 'Testing headline for task';
       ctrl.newTaskAdd();
-
-      expect(Tasks.tasks[0].title).toBe('Testing headline for task');
       expect(ctrl.newTaskTitle).toBe('');
 
     });
