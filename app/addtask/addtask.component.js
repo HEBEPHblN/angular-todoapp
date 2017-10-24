@@ -8,7 +8,10 @@ angular.
 
 				Tasks.addTask(this.newTaskTitle);
 				this.newTaskTitle = '';
+				
 			}
+
+
 
 		}]
 	});
