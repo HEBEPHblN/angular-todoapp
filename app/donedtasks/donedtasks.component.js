@@ -2,20 +2,20 @@ angular.
 	module('donedTasks').
 	component('donedTasks', {
 		templateUrl: 'donedtasks/donedtasks.template.html',
-		controller: ['Tasks', '$filter', function taskListController(Tasks, $filter) {
+		controller: ['Tasks', '$filter', function donedTasksController(Tasks, $filter) {
 
 			this.tasks = Tasks.tasks;
 			
-			
+			this.countTasks = function() {
+				return Tasks.getTasks({done:true}).length;
+			}
+
 
 			this.taskUndone = function(taskId) {
-				$filter('filter')(Tasks.tasks,{id: taskId})[0].done = false;
-			}
 
-			this.countTasks = function() {
-				return $filter('filter')(Tasks.tasks,{done: true}).length;
+				Tasks.getTasks({id: taskId})[0].done = false;
+				
 			}
-
 			
 		}]
 	});

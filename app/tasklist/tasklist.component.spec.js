@@ -24,17 +24,6 @@ describe('taskList', function() {
 
     });
 
-    it('countTasks() - should use Task service and mark requested task as done', function() {
-      
-      Tasks.addTask('Task 1');
-
-      ctrl.taskDone(0);
-
-      expect(Tasks.getTasks({id: 0})[0].done).toBe(true);
-
-    });
-
-
   });
 
 });

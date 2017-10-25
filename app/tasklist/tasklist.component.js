@@ -2,7 +2,7 @@ angular.
 	module('taskList').
 	component('taskList', {
 		templateUrl: 'tasklist/tasklist.template.html',
-		controller: ['Tasks', '$filter', function taskListController(Tasks, $filter) {
+		controller: ['Tasks', function taskListController(Tasks) {
 
 			this.tasks = Tasks.tasks;
 			
