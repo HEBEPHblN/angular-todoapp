@@ -1,6 +1,8 @@
 angular.module('todoApp', [
+	'ngRoute',
 	'addTask',
 	'taskList',
-	'donedTasks'
+	'donedTasks',
+	'menu'
 ]);
 
