@@ -6,7 +6,9 @@ angular.
 
 			this.taskId = $routeParams.taskId;
 
-			this.taskObject = Tasks.getTasks({id: $routeParams.taskId})[0];
+			this.task = Tasks.getTasks({id: $routeParams.taskId})[0];
+
+			this.tasktype = (this.task.done) ? 'panel-success' : 'panel-primary';
 
 		}]
 	});

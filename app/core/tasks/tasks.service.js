@@ -7,6 +7,7 @@ angular.
 			var that = this;
 			that.tasks.push({
 					title: taskHeading,
+					desc: 'There is description of the task..',
 					done: false,
 					id: that.tasksCount++
 				});
