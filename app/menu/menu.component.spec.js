@@ -5,9 +5,10 @@ describe('menu', function() {
   beforeEach(module('menu'));
 
   describe('menuController', function() {
-    var ctrl;
+    var ctrl, Tasks;
 
-    beforeEach(inject(function($componentController, $location) {
+    beforeEach(inject(function($componentController, $location, _Tasks_) {
+      Tasks = _Tasks_;
       ctrl = $componentController('menuTabs');
       $location.path('/addTask/otherspath?test=1');
     }));
@@ -16,6 +17,16 @@ describe('menu', function() {
 
 
       expect(ctrl.activeClass("/addTask")).toBe('active');
+
+    });
+
+    it('countTasks() should count all tasks amount', function() {
+
+      Tasks.addTask('Task');
+      Tasks.addTask('Task');
+      Tasks.addTask('Task');
+
+      expect(ctrl.tasksCount()).toBe(3);
 
     });
 

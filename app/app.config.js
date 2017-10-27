@@ -11,9 +11,6 @@ angular.
         when('/tasklist', {
           template: '<task-list></task-list>'
         }).
-        when('/donedtasks', {
-          template: '<doned-tasks></doned-tasks>'
-        }).
         otherwise('/addtask');
     }
   ]);

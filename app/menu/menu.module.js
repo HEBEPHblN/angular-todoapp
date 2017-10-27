@@ -1,1 +1,1 @@
-angular.module('menu', []);
+angular.module('menu', ['core.tasks']);
