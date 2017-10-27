@@ -4,7 +4,7 @@
 <ul class="list-group" ng-show="$ctrl.countUndone()">
 	<li class="list-group-item clearfix todoitem" ng-repeat="task in $ctrl.tasks | filter: {done:false}"> {{ task.title }}
 		<div class="btn-group pull-right" role="group">
-			<button type="button" class="btn btn-warning btn-sm ">Details</button>
+			<a href="#!/tasklist/{{task.id}}" class="btn btn-warning btn-sm ">Details</a>
 			<button ng-click="$ctrl.taskDone(task.id)" type="button" class="btn btn-success btn-sm ">Done</button>
 		</div>
 	</li>
@@ -18,7 +18,7 @@
 <ul class="list-group" ng-show="$ctrl.countDone()">
 	<li class="list-group-item clearfix todoitem" ng-repeat="task in $ctrl.tasks | filter: {done:true}">{{ task.title }} 
 		<div class="btn-group pull-right" role="group">
-			<button type="button" class="btn btn-warning btn-sm ">Details</button>
+			<a href="#!/tasklist/{{task.id}}" class="btn btn-warning btn-sm ">Details</a>
 			<button ng-click="$ctrl.taskUndone(task.id)" type="button" class="btn btn-danger btn-sm">Undone</button>
 		</div>
 	</li>
