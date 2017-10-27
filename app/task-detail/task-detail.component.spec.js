@@ -9,10 +9,14 @@ describe('taskDetail', function() {
 
   	var Tasks, ctrl;
 
-  	beforeEach(inject(function($componentController, _Tasks_) {
+  	beforeEach(inject(function($componentController, _Tasks_, $routeParams) {
       Tasks = _Tasks_;
       ctrl = $componentController('taskDetail');
+      $routeParams.taskId = 0;
     }));
+
+
+    
 
     /*it('newTaskAdd() - should use Task service and clear input field after that', function() {
       
