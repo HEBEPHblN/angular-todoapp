@@ -10,5 +10,14 @@ angular.
 
 			this.tasktype = (this.task.done) ? 'panel-success' : 'panel-primary';
 
+			this.isEdit = false;
+
+			var that = this;
+
+			this.descSave = function () {
+				Tasks.getTasks({id: $routeParams.taskId})[0].desc = that.task.desc;
+				that.isEdit = false;
+			}
+
 		}]
 	});

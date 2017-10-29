@@ -7,25 +7,21 @@ describe('taskDetail', function() {
   // Test the controller
   describe('taskDetailController', function() {
 
-  	var Tasks, ctrl;
+  	var Tasks, ctrl, $routeParams;
 
-  	beforeEach(inject(function($componentController, _Tasks_, $routeParams) {
+  	beforeEach(inject(function($componentController, _Tasks_, _$routeParams_) {
       Tasks = _Tasks_;
-      ctrl = $componentController('taskDetail');
+      $routeParams = _$routeParams_;
+      Tasks.addTask('Title of the task');
       $routeParams.taskId = 0;
+      ctrl = $componentController('taskDetail');
     }));
 
-
-    
-
-    /*it('newTaskAdd() - should use Task service and clear input field after that', function() {
-      
-
-      ctrl.newTaskTitle = 'Testing headline for task';
-      ctrl.newTaskAdd();
-      expect(ctrl.newTaskTitle).toBe('');
-
-    });*/
+    it('descSave() - should equate desc string from parameters to current task in Tasks service', function() {
+      ctrl.task.desc = "description"
+      ctrl.descSave();
+      expect(Tasks.getTasks({id: $routeParams.taskId})[0].desc).toBe('description');
+    });
 
 
   });
