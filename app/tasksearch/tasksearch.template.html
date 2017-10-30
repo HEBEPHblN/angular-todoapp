@@ -1,0 +1,15 @@
+<h3>Result: {{ $ctrl.query ? $ctrl.queryCount() : 0 }}</h3>
+<div class="form-group">
+	<div class="input-group">
+		<input type="text" class="form-control" placeholder="Type your query.." aria-label="Type your query.." ng-model="$ctrl.query">
+		<span class="input-group-btn"><button class="btn btn-secondary" type="submit">Search</button></span>
+	</div>
+</div>
+<ul class="list-group" ng-show="$ctrl.query">
+	<li class="list-group-item clearfix todoitem" ng-repeat="task in $ctrl.tasks | filter:$ctrl.query"> {{ task.title }}
+		<a href="#!/tasklist/{{task.id}}" class="btn btn-warning btn-sm pull-right">Details</a>
+	</li>
+</ul>
+<div class="alert alert-warning" role="alert" ng-hide="$ctrl.query ? $ctrl.queryCount() : false">
+	No tasks for your search query
+</div>

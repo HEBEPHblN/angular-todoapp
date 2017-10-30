@@ -4,6 +4,7 @@ angular.module('todoApp', [
 	'taskList',
 	'taskDetail',
 	'menu',
-	'core'
+	'core',
+	'taskSearch'
 ]);
 

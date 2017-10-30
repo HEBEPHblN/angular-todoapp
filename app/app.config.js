@@ -11,6 +11,9 @@ angular.
         when('/tasklist', {
           template: '<task-list></task-list>'
         }).
+        when('/tasksearch', {
+          template: '<task-search></task-search>'
+        }).
         when('/tasklist/:taskId', {
           template: '<task-detail></task-detail>'
         }).
