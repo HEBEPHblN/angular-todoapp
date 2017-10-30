@@ -3,6 +3,7 @@ angular.module('todoApp', [
 	'addTask',
 	'taskList',
 	'taskDetail',
-	'menu'
+	'menu',
+	'core'
 ]);
 

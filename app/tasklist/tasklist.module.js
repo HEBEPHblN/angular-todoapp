@@ -1,1 +1,4 @@
-angular.module('taskList', ['core.tasks']);
+angular.module('taskList', [
+	'core.tasks',
+	'core'
+	]);

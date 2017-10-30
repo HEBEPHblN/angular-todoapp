@@ -2,17 +2,17 @@ angular.
 	module('taskList').
 	component('taskList', {
 		templateUrl: 'tasklist/tasklist.template.html',
-		controller: ['Tasks', function taskListController(Tasks) {
+		controller: ['Tasks', 'taskDoneFilter', function taskListController(Tasks, taskDoneFilter) {
 
 			this.tasks = Tasks.tasks;
 			
 
 			this.countUndone = function() {
-				return Tasks.getTasks({done:false}).length;
+				return taskDoneFilter(this.tasks, false).length;
 			}
 
 			this.countDone = function() {
-				return Tasks.getTasks({done:true}).length;
+				return taskDoneFilter(this.tasks, true).length;
 			}
 
 
