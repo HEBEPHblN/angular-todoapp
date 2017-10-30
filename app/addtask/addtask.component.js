@@ -4,10 +4,16 @@ angular.
 		templateUrl: 'addtask/addtask.template.html',
 		controller: ['Tasks', function addTaskController(Tasks) {
 
-			this.newTaskAdd = function() {
+			this.newTaskAdd = function(form) {
 
-				Tasks.addTask(this.newTaskTitle);
-				this.newTaskTitle = '';
+				if(form.$valid) {
+					Tasks.addTask(this.newTaskTitle);
+					this.newTaskTitle = '';
+					
+					form.$setPristine();
+					form.tasktitle.$setUntouched();
+				}
+				
 				
 			}
 
