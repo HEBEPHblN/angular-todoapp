@@ -12,9 +12,9 @@ angular.
 					id: that.tasksCount++
 				});
 		},
-		getTasks: function(queryObject) {
+		getTask: function(id) {
 			var that = this;
-			return $filter('filter')(this.tasks, queryObject);
+			return $filter('filter')(this.tasks, {id: id})[0];
 		}
 	}
 }]);

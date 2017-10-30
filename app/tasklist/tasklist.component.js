@@ -18,13 +18,13 @@ angular.
 
 			this.taskDone = function(taskId) {
 
-				Tasks.getTasks({id: taskId})[0].done = true;
+				Tasks.getTask(taskId).done = true;
 				
 			}
 
 			this.taskUndone = function(taskId) {
 
-				Tasks.getTasks({id: taskId})[0].done = false;
+				Tasks.getTask(taskId).done = false;
 				
 			}
 

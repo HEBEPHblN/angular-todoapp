@@ -20,7 +20,7 @@ describe('taskList', function() {
 
       ctrl.taskDone(0);
 
-      expect(Tasks.getTasks({id: 0})[0].done).toBe(true);
+      expect(Tasks.getTask(0).done).toBe(true);
 
     });
 
@@ -45,7 +45,7 @@ describe('taskList', function() {
 
       ctrl.taskUndone(0);
 
-      expect(Tasks.getTasks({id: 0})[0].done).toBe(false);
+      expect(Tasks.getTask(0).done).toBe(false);
 
     });
 

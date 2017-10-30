@@ -6,7 +6,7 @@ angular.
 
 			this.taskId = $routeParams.taskId;
 
-			this.task = Tasks.getTasks({id: $routeParams.taskId})[0];
+			this.task = Tasks.getTask($routeParams.taskId);
 
 			this.tasktype = (this.task.done) ? 'panel-success' : 'panel-primary';
 
@@ -15,7 +15,7 @@ angular.
 			var that = this;
 
 			this.descSave = function () {
-				Tasks.getTasks({id: $routeParams.taskId})[0].desc = that.task.desc;
+				Tasks.getTask($routeParams.taskId).desc = that.task.desc;
 				that.isEdit = false;
 			}
 

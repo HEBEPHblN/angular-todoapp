@@ -44,21 +44,16 @@ describe('Tasks', function() {
   });
 
   // Test the method
-  describe('getTasks() method', function() {
+  describe('getTask() method', function() {
 
     //The method is based on proprietary service of Angular - $filter, so I just test if my syntax is correct
-    it('should get tasks array by query object', function() {
+    it('should get task object by id', function() {
 
       Tasks.addTask('Task 1');
       Tasks.addTask('Task 2');
 
-
-      var fetchedTasks = Tasks.getTasks({done: false});
-      var fetchedTasks2 = Tasks.getTasks({id: 1});
-
       
-      expect(fetchedTasks.length).toBe(2);
-      expect(fetchedTasks2[0].id).toBe(1);
+      expect(Tasks.getTask(0).id).toBe(0);
 
     });
 

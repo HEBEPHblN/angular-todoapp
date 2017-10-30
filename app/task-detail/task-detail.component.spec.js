@@ -20,7 +20,7 @@ describe('taskDetail', function() {
     it('descSave() - should equate desc string from parameters to current task in Tasks service', function() {
       ctrl.task.desc = "description"
       ctrl.descSave();
-      expect(Tasks.getTasks({id: $routeParams.taskId})[0].desc).toBe('description');
+      expect(Tasks.getTask($routeParams.taskId).desc).toBe('description');
     });
 
 
