@@ -1,0 +1,1 @@
+angular.module('taskSearch', ['core.tasks']);

@@ -1,0 +1,16 @@
+<h3>Add new task
+	<small class="text-muted">Type the title and press "Add"</small>
+</h3>
+<form name="taskform" novalidate ng-submit="$ctrl.newTaskAdd(taskform)">
+	<div class="form-group">
+		<div class="input-group">
+		<input type="text" class="form-control" placeholder="Title of the task" aria-label="Title of the task" ng-model="$ctrl.newTaskTitle" name="tasktitle" required>
+		<span class="input-group-btn"><button class="btn btn-secondary" type="submit">Add</button></span>
+		</div>
+	</div>
+	<div ng-show="(taskform.tasktitle.$touched || taskform.$submitted) && taskform.tasktitle.$error.required" class="alert alert-danger" role="alert">
+
+			Please type task title!
+
+	</div>
+</form>

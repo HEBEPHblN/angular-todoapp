@@ -1,0 +1,18 @@
+<div style="height:20px;"></div>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <a href="#!/tasklist" class="btn btn-default"><span class="glyphicon glyphicon glyphicon-chevron-left"></span>Return to tasklist</a>
+    <button ng-click="$ctrl.isEdit = true" ng-hide="$ctrl.isEdit" type="button" class="btn btn-warning btn-sm pull-right">Edit</button>
+    <button ng-click="$ctrl.descSave()" ng-show="$ctrl.isEdit" type="button" class="btn btn-success btn-sm pull-right">Save</button>
+  </div>
+</div>
+<div ng-class="'panel ' +  ($ctrl.tasktype)">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{$ctrl.task.title}}</a></h3>
+  </div>
+  <div class="panel-body">
+   	<span ng-hide="$ctrl.isEdit">{{$ctrl.task.desc}}</span>
+   	<textarea ng-model="$ctrl.task.desc" ng-show="$ctrl.isEdit" class="form-control"></textarea>
+  </div>
+
+</div>

@@ -1,3 +1,10 @@
 angular.module('todoApp', [
-	'todoList'
+	'ngRoute',
+	'addTask',
+	'taskList',
+	'taskDetail',
+	'menu',
+	'core',
+	'taskSearch'
 ]);
+

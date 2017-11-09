@@ -1,0 +1,28 @@
+<h3>Tasks to do <span class="badge badge-secondary">{{ $ctrl.countUndone() }}</span>
+	<small class="text-muted">Click to mark as done</small>
+</h3>
+<ul class="list-group" ng-show="$ctrl.countUndone()">
+	<li class="list-group-item clearfix todoitem" ng-repeat="task in $ctrl.tasks | taskDone:false"> {{ task.title }}
+		<div class="btn-group pull-right" role="group">
+			<a href="#!/tasklist/{{task.id}}" class="btn btn-warning btn-sm ">Details</a>
+			<button ng-click="$ctrl.taskDone(task.id)" type="button" class="btn btn-success btn-sm ">Done</button>
+		</div>
+	</li>
+</ul>
+<div class="alert alert-warning" role="alert" ng-hide="$ctrl.countUndone()">
+	No tasks to do
+</div>
+<h3>Done tasks <span class="badge badge-secondary">{{ $ctrl.countDone() }}</span>
+	<small class="text-muted">Click to mark as undone</small>
+</h3>
+<ul class="list-group" ng-show="$ctrl.countDone()">
+	<li class="list-group-item clearfix todoitem" ng-repeat="task in $ctrl.tasks | taskDone:true">{{ task.title }} 
+		<div class="btn-group pull-right" role="group">
+			<a href="#!/tasklist/{{task.id}}" class="btn btn-warning btn-sm ">Details</a>
+			<button ng-click="$ctrl.taskUndone(task.id)" type="button" class="btn btn-danger btn-sm">Undone</button>
+		</div>
+	</li>
+</ul>
+<div class="alert alert-warning" role="alert" ng-hide="$ctrl.countDone()">
+	No done tasks
+</div>

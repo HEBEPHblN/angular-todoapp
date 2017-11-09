@@ -1,8 +1,11 @@
 <!doctype html>
-<html lang="en" ng-app="todoApp">
+<html lang="en" >
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
     <title>My TODO App</title>
+    
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
 
     <script src="bower_components/angular/angular.js"></script>
@@ -10,8 +13,25 @@
 
 
     <script src="app.module.js"></script>
-    <script src="todolist/todolist.module.js"></script>
-    <script src="todolist/todolist.component.js"></script>
+    <script src="app.config.js"></script>
+    <script src="core/core.module.js"></script>
+    <script src="core/tasks/tasks.module.js"></script>
+
+
+    <script src="tasklist/tasklist.module.js"></script>
+    <script src="task-detail/task-detail.module.js"></script>
+    <script src="menu/menu.module.js"></script>
+    <script src="addtask/addtask.module.js"></script>
+    <script src="tasksearch/tasksearch.module.js"></script>
+
+    <script src="core/tasks/tasks.service.js"></script>
+    <script src="core/taskdone/taskdone.filter.js"></script>
+
+    <script src="tasklist/tasklist.component.js"></script>
+    <script src="task-detail/task-detail.component.js"></script>
+    <script src="menu/menu.component.js"></script>
+    <script src="addtask/addtask.component.js"></script>
+    <script src="tasksearch/tasksearch.component.js"></script>
 
     <style type="text/css">
         body {
@@ -22,10 +42,13 @@
         }
     </style>
   </head>
-  <body>
+  <body ng-app="todoApp">
     <div class="container">
         <div class="row">
-            <todolist></todolist>    
+            <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+                <menu-tabs></menu-tabs>
+                <div ng-view></div>
+            </div>
         </div>
     </div>
   </body>
