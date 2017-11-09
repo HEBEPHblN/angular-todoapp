@@ -1,7 +1,7 @@
 # It's my first app with Angular.js
 
 The purpose was not to create something really useful but to learn and practise basic concepts more deeply.
-The app was based on steps of [official tutorial](https://docs.angularjs.org/tutorial) but instead of just repeating the same code as in tutorial I've decided to make an app with other functionalities - simple task manager.
+The app was based on steps of [official tutorial](https://docs.angularjs.org/tutorial) but instead of just repeating the same code as in tutorial I decided to make an app with other functionalities - simple task manager.
 
 ## Thus in my to-do app you can:
 
